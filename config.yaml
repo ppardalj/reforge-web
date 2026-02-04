@@ -1,6 +1,6 @@
-title: HugoSkeleton
-theme: hugoskeleton
-baseURL: https://www.hugoskeleton.com
+title: Reforge
+theme: reforge
+baseURL: https://www.reforge.com
 languageCode: es-es
 defaultContentLanguage: es
 languages:

@@ -1,6 +1,6 @@
 title: Reforge
 theme: reforge
-baseURL: https://www.reforge.com
+baseURL: https://reforge-web.netlify.app/
 languageCode: es-es
 defaultContentLanguage: es
 languages:

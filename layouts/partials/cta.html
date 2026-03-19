@@ -19,20 +19,42 @@
            Las plazas para la beta cerrada son limitadas. Regístrate ahora para asegurar tu acceso anticipado y recibir actualizaciones exclusivas.
          </p>
 
-         <form class="max-w-lg mx-auto relative group" onsubmit="event.preventDefault()">
-           <div class="relative flex items-center">
-             <input
-               type="email"
-               placeholder="tu@email.com"
-               class="w-full bg-[#18181b] border border-white/10 rounded-full pl-6 pr-36 md:pr-40 py-3 md:py-4 h-14 md:h-16 text-white text-sm md:text-base placeholder:text-gray-500 focus:outline-none focus:border-[#FF8904]/50 focus:ring-1 focus:ring-[#FF8904]/50 transition-all shadow-inner"
-               required
-             >
-             <div class="absolute right-1.5 top-1.5 bottom-1.5 md:right-2 md:top-2 md:bottom-2">
-               {{ partial "ui/button.html" (dict "text" "Unirme" "variant" "primary" "size" "lg" "className" "h-full rounded-full px-6 md:px-8 text-sm md:text-base font-semibold shadow-none hover:shadow-lg transition-all") }}
+         <div id="cta-form-container">
+           <form
+             id="cta-form"
+             class="max-w-lg mx-auto relative group"
+             action="https://assets.mailerlite.com/jsonp/2091865/forms/182384440246273563/subscribe"
+             method="post"
+           >
+             <div class="relative flex items-center">
+               <input
+                 id="cta-email"
+                 name="fields[email]"
+                 type="email"
+                 placeholder="tu@email.com"
+                 class="w-full bg-[#18181b] border border-white/10 rounded-full pl-6 pr-36 md:pr-40 py-3 md:py-4 h-14 md:h-16 text-white text-sm md:text-base placeholder:text-gray-500 focus:outline-none focus:border-[#FF8904]/50 focus:ring-1 focus:ring-[#FF8904]/50 transition-all shadow-inner"
+                 autocomplete="email"
+                 required
+               >
+              
+               <!-- Hidden fields que MailerLite espera -->
+               <input type="hidden" name="ml-submit" value="1"/>
+               <input type="hidden" name="anticsrf" value="true"/>
+
+               <div class="absolute right-1.5 top-1.5 bottom-1.5 md:right-2 md:top-2 md:bottom-2">
+                 {{ partial "ui/button.html" (dict "text" "Unirme" "variant" "primary" "size" "lg" "className" "h-full rounded-full px-6 md:px-8 text-sm md:text-base font-semibold shadow-none hover:shadow-lg transition-all" "type" "submit" "id" "cta-submit") }}
+               </div>
              </div>
-           </div>
-           <div class="absolute -inset-[1px] bg-gradient-to-r from-[#FF8904] to-[#E7000B] rounded-full opacity-0 group-hover:opacity-20 transition-opacity pointer-events-none -z-10 blur-sm"></div>
-         </form>
+             <div class="absolute -inset-[1px] bg-gradient-to-r from-[#FF8904] to-[#E7000B] rounded-full opacity-0 group-hover:opacity-20 transition-opacity pointer-events-none -z-10 blur-sm"></div>
+           </form>
+
+           <p id="cta-status-success" class="hidden text-sm text-green-500 font-medium mt-4">
+             ¡Gracias! Te avisaremos cuando abramos la app.
+           </p>
+           <p id="cta-status-error" class="hidden text-sm text-red-500 mt-4">
+             Algo salió mal. Por favor intenta de nuevo.
+           </p>
+         </div>
 
          <p class="text-[#52525b] text-sm mt-8">
            Respetamos tu privacidad. Cero spam, prometido.

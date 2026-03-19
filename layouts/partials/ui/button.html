@@ -24,6 +24,10 @@
     {{ $sizeClasses = "h-14 px-8 text-base" }}
 {{ end }}
 
-<button class="{{ $baseClasses }} {{ $variantClasses }} {{ $sizeClasses }} {{ $className }}">
+<button 
+  class="{{ $baseClasses }} {{ $variantClasses }} {{ $sizeClasses }} {{ $className }}"
+  {{ if .type }}type="{{ .type }}"{{ end }}
+  {{ if .id }}id="{{ .id }}"{{ end }}
+>
     {{ .text }}
 </button>

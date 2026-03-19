@@ -23,7 +23,40 @@
         </p>
 
         <!-- CTA -->
-        {{ partial "ui/button.html" (dict "text" "Solicitar acceso anticipado" "size" "lg" "className" "h-14 px-8 text-base bg-gradient-to-r from-[#FF8904] to-[#E7000B] shadow-[0px_0px_20px_0px_rgba(252,148,11,0.2)] hover:opacity-90 transition-opacity") }}
+        <div id="hero-form-container" class="w-full max-w-lg">
+          <form
+            id="hero-form"
+            class="relative flex items-center group"
+            action="https://assets.mailerlite.com/jsonp/2091865/forms/182384440246273563/subscribe"
+            method="post"
+          >
+            <input
+              id="hero-email"
+              name="fields[email]"
+              type="email"
+              placeholder="tu@email.com"
+              class="w-full bg-[#18181b] border border-white/10 rounded-full pl-6 pr-36 md:pr-40 py-3 md:py-4 h-14 md:h-16 text-white text-sm md:text-base placeholder:text-gray-500 focus:outline-none focus:border-[#FF8904]/50 focus:ring-1 focus:ring-[#FF8904]/50 transition-all shadow-inner"
+              autocomplete="email"
+              required
+            >
+            
+            <!-- Hidden fields que MailerLite espera -->
+            <input type="hidden" name="ml-submit" value="1"/>
+            <input type="hidden" name="anticsrf" value="true"/>
+
+            <div class="absolute right-1.5 top-1.5 bottom-1.5 md:right-2 md:top-2 md:bottom-2">
+              {{ partial "ui/button.html" (dict "text" "Unirme" "variant" "primary" "size" "lg" "className" "h-full rounded-full px-6 md:px-8 text-sm md:text-base font-semibold shadow-none hover:shadow-lg transition-all" "type" "submit" "id" "hero-submit") }}
+            </div>
+            <div class="absolute -inset-[1px] bg-gradient-to-r from-[#FF8904] to-[#E7000B] rounded-full opacity-0 group-hover:opacity-20 transition-opacity pointer-events-none -z-10 blur-sm"></div>
+          </form>
+
+          <p id="hero-status-success" class="hidden text-sm text-green-500 font-medium mt-4">
+            ¡Gracias! Te avisaremos cuando abramos la app.
+          </p>
+          <p id="hero-status-error" class="hidden text-sm text-red-500 mt-4">
+            Algo salió mal. Por favor intenta de nuevo.
+          </p>
+        </div>
 
         <!-- Feature List -->
         <div class="flex flex-col gap-3">

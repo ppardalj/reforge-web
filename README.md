@@ -1,6 +1,6 @@
 # Reforge Website
 
-[![CircleCI](https://circleci.com/gh/reforge/reforge-web/tree/main.svg?style=svg)](https://circleci.com/gh/reforge/reforge-web/tree/main)
+[![CI](https://github.com/ppardalj/reforge-web/actions/workflows/deploy.yml/badge.svg)](https://github.com/ppardalj/reforge-web/actions)
 
 ## :pick: Requirements
 
